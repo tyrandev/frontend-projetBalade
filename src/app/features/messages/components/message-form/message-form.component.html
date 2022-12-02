@@ -1,0 +1,37 @@
+
+
+<mat-grid-list cols="2" rowHeight="4:5">
+    <mat-grid-tile>
+
+    <div class="center">
+        <h2>Créer un nouveau message !</h2>
+        <form class="createMessage" [formGroup]="form" (ngSubmit)="submit()">
+
+            <mat-list>
+                <mat-form-field class="mesForm" appearance="fill">
+                    <mat-label>Destinataire : </mat-label>
+                    <input matInput formControlName="idRecipient">
+                </mat-form-field>
+
+                <mat-form-field class="mesForm" appearance="fill">
+                    <mat-label>Objet : </mat-label>
+                    <input matInput min = 0 formControlName="object">
+                </mat-form-field>
+
+                <mat-form-field class="mesForm" appearance="fill">
+                    <mat-label>Insérez du texte !</mat-label>
+                    <textarea matInput formControlName="content"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Valider</button>
+            </mat-list>
+        </form>
+        <p *ngIf="error">{{ error }}</p>
+    </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <img src="assets/ic_message.jpg" alt="image"/>
+    </mat-grid-tile>
+</mat-grid-list>
+

@@ -1,0 +1,32 @@
+<h1>Balade en attente de validation</h1>
+
+<ng-container *ngIf="pendingRides$ | async as pendingRides">
+
+  <table>
+    <thead>
+    <td> name ride</td>
+    <td> description</td>
+    <td> adresse</td>
+    <td> site web</td>
+    <td> score</td>
+    <td> difficulter</td>
+    <td> latitude</td>
+    <td> longitude</td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ride of pendingRides">
+      <td>{{ride.nameRide}}</td>
+      <td>{{ride.description}}</td>
+      <td>{{ride.place}}</td>
+      <td>{{ride.website}}</td>
+      <td>{{ride.score}}</td>
+      <td>{{ride.difficulty}}</td>
+      <td>{{ride.latitude}}</td>
+      <td>{{ride.longitude}}</td>
+      <td><button (click)="validate(ride)">accepter</button></td>
+      <td><button (click)="refuse(ride)">refuser</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+</ng-container>

@@ -1,0 +1,46 @@
+<h2>Créer une balade</h2>
+<form [formGroup]="form" (ngSubmit)="submit()" class="add_ride_form">
+  <mat-form-field class="name_ride" appearance="fill">
+    <mat-label>Nom de la balade :</mat-label>
+    <input matInput type="text" formControlName="nameRide">
+  </mat-form-field>
+  <p>
+    <mat-form-field class="name_ride" appearance="fill">
+      <mat-label>Adresse :</mat-label>
+      <input matInput type="text" formControlName="place">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="name_ride" appearance="fill">
+      <mat-label>Description :</mat-label>
+      <input matInput type="text" formControlName="description">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="name_ride" appearance="fill">
+      <mat-label>Site web :</mat-label>
+      <input matInput type="text" formControlName="website">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="name_ride" appearance="fill">
+      <mat-label>Horaire :</mat-label>
+      <input matInput type="text" formControlName="schedule">
+    </mat-form-field>
+  </p>
+
+  <table class="name_ride" cellspacing="0"><tr>
+    <td><mat-form-field class="name_ride" appearance="fill">
+      <mat-label>Difficulté :</mat-label>
+      <input matInput type="number" formControlName="difficulty">
+    </mat-form-field></td>
+    <td><mat-form-field class="name_ride" appearance="fill">
+      <mat-label>Score :</mat-label>
+      <input matInput type="number" formControlName="score">
+    </mat-form-field></td>
+  </tr></table>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Valider</button>
+</form>
+
+<p *ngIf="error">{{ error }}</p>
+

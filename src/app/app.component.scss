@@ -1,0 +1,43 @@
+#left-menu{
+  height: 100vh;
+  width: 25vw;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 5px 0px 5px rgba(0,0,0,0.1);
+}
+.admin-button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.right-content + ::ng-deep * {
+  height: 100vh;
+  width: 75vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.full-page-content  + ::ng-deep * {
+  height: 100vh;
+  width: 100vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hidden {
+  width: 0;
+}
+
+
+#container{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 100vh;
+}
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+  min-width: 8.33vw !important;
+  padding: 3px!important;
+  marging: 3px!important;
+}

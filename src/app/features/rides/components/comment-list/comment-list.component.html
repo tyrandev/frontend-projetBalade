@@ -1,0 +1,12 @@
+<h2>La liste des commentaires</h2>
+<div *ngIf="comments">
+
+  <mat-card *ngFor="let comment of comments; let index = index;" class="commentaire_card">
+    <mat-card-content>{{comment.content}}</mat-card-content>
+    <mat-card-content>
+      difficulté : {{comment.difficulty}}
+      score : {{comment.score}}<br>
+    </mat-card-content>
+  </mat-card>
+
+</div>

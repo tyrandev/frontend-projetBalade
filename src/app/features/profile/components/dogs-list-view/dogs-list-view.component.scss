@@ -1,0 +1,16 @@
+@use "node_modules/@angular/material" as mat;
+
+.dog-card {
+  margin: 15px;
+  cursor: pointer;
+  &:hover {
+    @include mat.elevation(8);
+  }
+
+}
+
+.dog-button{
+  position: revert;
+    bottom: 15px;
+    left: 20vw;
+}

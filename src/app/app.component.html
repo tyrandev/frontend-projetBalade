@@ -1,0 +1,11 @@
+
+<div id="container">
+  <mat-tab-group #tabGroup *ngIf="shouldShowLeftMenu()" id="left-menu" (selectedTabChange)="onTabChanged($event)">
+    <mat-tab  label="Carte"> <app-rides-list></app-rides-list> </mat-tab>
+    <mat-tab  label="Message"> <app-messages-list></app-messages-list> </mat-tab>
+    <mat-tab  label="Profil"> <app-dogs-list></app-dogs-list> </mat-tab>
+  </mat-tab-group>
+  <router-outlet [ngClass]="shouldShowLeftMenu() ? 'right-content' : 'full-page-content'" id="right-content"></router-outlet>
+</div>
+
+<button *ngIf="isAdmin()" mat-fab color="warn" class="admin-button" [routerLink]="switchAdminRoute()"><mat-icon>admin_panel_settings</mat-icon></button>

@@ -1,0 +1,10 @@
+<!--<app-dog-form (dogCreated)="createDog($event)" ></app-dog-form>-->
+<app-dogs-list-view
+  *ngIf="doglist$ | async as dogs"
+  [dogs]="dogs"
+  (dogDeleted)="deleteDog($event)"
+  (dogChanged)="updateDog($event)"></app-dogs-list-view>
+
+<button mat-fab color="primary" class="add_button" (click)="OnNavigate()">
+    <mat-icon>add</mat-icon>
+</button>

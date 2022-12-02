@@ -1,0 +1,10 @@
+<!--<app-new-ride-form (rideCreated)="createRide($event)" ></app-new-ride-form>-->
+<app-rides-list-view
+        [rides]="rides"
+        [selectedRide]="selectedRide"
+        (rideClick)="rideClick($event)"
+        (rideDeleted)="deleteRide($event)"
+        (rideChanged)="updateRide($event)"></app-rides-list-view>
+<button mat-fab color="primary" class="add_button">
+  <mat-icon (click)="goToAddRide()">add</mat-icon>
+</button>

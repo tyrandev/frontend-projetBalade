@@ -1,0 +1,77 @@
+<form [formGroup]="form" (submit)="submit()">
+
+    <fieldset>
+        <legend>New Comment</legend>
+
+        <!--- content Block --->
+        <div class="form-group">
+                    <textarea rows="10" cols="200" wrap="hard"
+                              formControlName="content"
+                    placeholder="insert a comment">
+                    </textarea>
+
+        </div>
+        <!--- Score --->
+        <div class="form-group">
+            <label>Score :
+                <input type="number"
+                       min=0
+                       max="5"
+                       placeholder="Score">
+            </label>
+        </div>
+
+        <!--- Select difficulty--->
+        <div class="form-group">
+            <label>Difficulty :
+                <input type="number"
+                       formControlName="difficulty"
+                       min=0
+                       max="5"
+                       placeholder="choose">
+            </label>
+        </div>
+
+        <!--- idUser --->
+        <div class="form-group">
+            <label>User's id :
+                <input type="number"
+                       formControlName="idUser"
+                       required min = 0
+                       placeholder="choose">
+            </label>
+        </div>
+
+      <!--- longitude --->
+      <div class="form-group">
+        <label>longitude :
+          <input type="number"
+                 formControlName="longitude"
+                 required min = 0
+                 placeholder="choose">
+        </label>
+      </div>
+      <!--- latitude --->
+      <div class="form-group">
+        <label>latitude :
+          <input type="number"
+                 formControlName="latitude"
+                 required min = 0
+                 placeholder="choose">
+        </label>
+      </div>
+
+        <!--- idRide --->
+        <div class="form-group">
+            <label>Ride's id :
+                <input type="number"
+                       formControlName="idRide"
+                       min = 0
+                       placeholder="choose">
+            </label>
+        </div>
+
+        <input type="submit" [disabled]="form.invalid">
+
+    </fieldset>
+</form>

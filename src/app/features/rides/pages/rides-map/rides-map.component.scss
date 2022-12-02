@@ -1,0 +1,20 @@
+.full-page-map {
+  height: 100vh;
+}
+
+.map-with-details {
+  height: 75vh;
+}
+
+.ride-details {
+  height: 25vh;
+  max-height: 94vh !important;
+  overflow-y: scroll !important;
+}
+
+.close_comment_button{
+  position: absolute;
+  right: 15px;
+  bottom: 20vh;
+  z-index: 5;
+}

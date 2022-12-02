@@ -1,0 +1,14 @@
+<div class="scrollable">
+
+  <mat-card class="dog-card" *ngFor="let dog of dogs; let index = index;" matRipple >
+    <mat-card-title>{{dog.nameDog}}</mat-card-title>
+    <mat-card-subtitle>{{dog.dateOfBirth}}</mat-card-subtitle>
+    <mat-card-content>{{dog.raceDog}}</mat-card-content>
+    <button class="dog-button" (click)="delete(dog, index)" mat-fab color="primary" ><mat-icon>delete</mat-icon></button>
+  </mat-card>
+
+</div>
+
+
+
+

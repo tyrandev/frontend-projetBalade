@@ -1,0 +1,14 @@
+<h2>Liste des messages !</h2>
+
+
+<div class="scrollable">
+
+    <mat-card class="message-card" *ngFor="let message of messages; let index = index;" matRipple >
+        <mat-card-title>{{message.object}}</mat-card-title>
+        <mat-card-subtitle>{{message.idRecipient}}</mat-card-subtitle>
+        <mat-card-content>{{message.content}}</mat-card-content>
+        <button class="message-button" (click)="delete(message, index)" mat-fab color="primary" ><mat-icon>delete</mat-icon></button>
+    </mat-card>
+
+</div>
+

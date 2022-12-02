@@ -1,0 +1,10 @@
+<!--app-message-form (messageCreated)="postMessage($event)"></app-message-form-->
+<app-messages-list-view
+        *ngIf="messagelist$ | async as messages"
+        [messages]="messages"
+        (messageDeleted)="deleteMessage($event)"
+        (messageChanged)="updateMessage($event)"></app-messages-list-view>
+
+<button mat-fab color="primary" class="add_button" (click)="OnNavigate()">
+    <mat-icon>add</mat-icon>
+</button>

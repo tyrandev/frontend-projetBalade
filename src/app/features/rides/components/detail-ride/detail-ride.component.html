@@ -1,0 +1,18 @@
+<div class="detail_ride">
+<ng-container
+    *ngIf="currentSelectedRide">
+  <div class="detail">
+    <h1>{{currentSelectedRide.nameRide}}</h1>
+    <h2>{{currentSelectedRide.place}}</h2>
+
+      difficulté : {{currentSelectedRide.difficulty}}<br>
+      score :{{currentSelectedRide.score}}<br>
+      description :{{currentSelectedRide.description}}<br>
+      horaire :{{currentSelectedRide.schedule}}<br>
+      site web:{{currentSelectedRide.website}}<br>
+    <app-comment-list *ngIf="comments$ | async as comments" [comments]="comments"></app-comment-list>
+
+  </div>
+</ng-container>
+
+</div>

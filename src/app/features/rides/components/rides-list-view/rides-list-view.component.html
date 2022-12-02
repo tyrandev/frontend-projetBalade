@@ -1,0 +1,19 @@
+<div class="scrollable">
+  <mat-card
+    *ngFor="let ride of rides; let index = index;"
+    id="ride-{{ride.id}}"
+    [ngClass]="ride?.id === selectedRide?.id ? 'ride-selected-card' : 'ride-card'"
+    matRipple
+    (click)="selectRide(ride)">
+    <mat-card-title>{{ride.nameRide}}</mat-card-title>
+    <mat-card-subtitle>{{ride.place}}</mat-card-subtitle>
+    <mat-card-content>
+      difficulté : {{ride.difficulty}}<br>
+      utilisateur :{{ride.idUser}}<br>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+

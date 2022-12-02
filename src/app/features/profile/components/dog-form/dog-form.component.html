@@ -1,0 +1,56 @@
+<!--
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div>
+    <label>Nom :
+        <input type="text" formControlName="nameDog">
+    </label>
+    </div>
+    <div>
+    <label>Race :
+        <input type="text" formControlName="raceDog">
+    </label>
+    </div>
+    <div>
+    <label>Date de naissance :
+        <input type="text" formControlName="dateOfBirth">
+    </label>
+    </div>
+
+    <input type="submit" [disabled]="form.invalid" >
+</form>
+<p *ngIf="error">{{ error }}</p>-->
+<mat-grid-list cols="2" rowHeight="4:5">
+    <mat-grid-tile>
+        <img src="assets/dogImage.jpg" alt="image"/>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+
+        <div class="center">
+            <h2>Ajoutez un nouveau chien</h2>
+            <form class="createDog" [formGroup]="form" (ngSubmit)="submit()">
+                <mat-list>
+                    <mat-form-field class="dogForm" appearance="fill">
+                        <mat-label>Nom</mat-label>
+                        <input matInput placeholder="Toby" formControlName="nameDog">
+                    </mat-form-field>
+
+                    <mat-form-field class="dogForm" appearance="fill">
+                        <mat-label>Race</mat-label>
+                        <input matInput placeholder="Border Collie" formControlName="raceDog">
+                    </mat-form-field>
+
+                    <mat-form-field class="dogForm" appearance="fill">
+                        <mat-label>Date de naissance</mat-label>
+                        <input matInput placeholder="2021-12-31" formControlName="dateOfBirth">
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Valider</button>
+                </mat-list>
+
+            </form>
+            <p *ngIf="error">{{ error }}</p>
+        </div>
+    </mat-grid-tile>
+
+</mat-grid-list>

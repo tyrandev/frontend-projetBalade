@@ -1,0 +1,32 @@
+<agm-map
+  #myMap
+  [ngClass]="currentSelectedRide ? 'map-with-details' : 'full-page-map'"
+  [zoom]="currentSelectedRide ? 15 : 9"
+  [latitude]='centerLatitude()'
+  [longitude]='centerLongitude()'
+>
+
+  <ng-container *ngIf="rides$ | async as rides">
+    <ng-container
+      *ngFor="let ride of rides">
+
+      <agm-marker
+        (markerClick)="selectRide(ride)"
+        [title]="ride.nameRide"
+        [latitude]="ride.latitude"
+        [longitude]="ride.longitude">
+      </agm-marker>
+
+    </ng-container>
+
+  </ng-container>
+
+
+</agm-map>
+
+<div class="ride-details" *ngIf="currentSelectedRide">
+<!--  <p>{{currentSelectedRide.nameRide}}</p>-->
+  <button class="close_comment_button" mat-raised-button color="primary" (click)="closeRideDetails()"><mat-icon>close</mat-icon></button>
+  <app-detail-ride [currentSelectedRide]="currentSelectedRide"></app-detail-ride>
+
+</div>

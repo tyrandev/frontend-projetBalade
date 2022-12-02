@@ -1,0 +1,20 @@
+.dogForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+mat-grid-tile {
+  background: white;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
